@@ -1,15 +1,10 @@
-"use client"
+"use client";
 
 import PrimaryButton from "@/components/buttons/primary-button";
 
 export default function LoginButton(props: {
-    label: string,
-    type?: "submit" | "button"
+  label: string;
+  type?: "submit" | "button";
 }) {
-    return (
-        <PrimaryButton
-            type={props.type ?? "button"}
-            label={props.label}
-        />
-    );
+  return <PrimaryButton type={props.type ?? "button"} label={props.label} />;
 }
