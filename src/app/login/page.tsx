@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link";
+import LoginButton from "@/components/buttons/login-button";
 
 export default function LoginPage() {
   async function login(formData: FormData) {
@@ -28,7 +29,7 @@ export default function LoginPage() {
         <label htmlFor="password">Password</label>
         <input type="password" name="password"/>
 
-        <button type="submit">Login</button>
+        <LoginButton label="Login"/>
 
         <p>Don&#39;t have an account? Register <Link href={"/register"}>here</Link>!</p>
       </form>
