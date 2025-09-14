@@ -2,12 +2,14 @@
 
 import PrimaryButton from "@/components/buttons/primary-button";
 
-async function login() {
-    console.log("login");
-}
-
 export default function LoginButton(props: {
-    label: string
+    label: string,
+    type?: "submit" | "button"
 }) {
-    return <PrimaryButton onClick={login} label={props.label}/>
+    return (
+        <PrimaryButton
+            type={props.type ?? "button"}
+            label={props.label}
+        />
+    );
 }

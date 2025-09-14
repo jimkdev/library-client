@@ -1,23 +1,33 @@
 "use client"
 import Link from "next/link";
 import LoginButton from "@/components/buttons/login-button";
+import StringUtils from "@/utils/string-utils";
+import {useRouter} from "next/navigation";
 
 export default function LoginPage() {
-  async function login(formData: FormData) {
-    const response: Response = await fetch(`${process.env.NEXT_PUBLIC_API_URL!}/users/login`, {
-      method: "POST",
-      body: JSON.stringify({
-        username: formData.get("username"),
-        password: formData.get("password"),
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      }
-    });
+    const router = useRouter();
 
-    if (response.ok) {
-      console.log(await response.json());
-    }
+    async function login(formData: FormData) {
+        const stringUtils = new StringUtils();
+        try {
+            const response: Response = await fetch(`${process.env.NEXT_PUBLIC_API_URL!}/users/login`, {
+                method: "POST",
+                body: JSON.stringify({
+                    username: stringUtils.trimValue(String(formData.get("username"))),
+                    password: stringUtils.trimValue(String(formData.get("password"))),
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                }
+            });
+
+            if (response.status === 200) {
+                router.push("/admin")
+            }
+        } catch (error) {
+            console.log(error);
+        }
   }
 
   return (
@@ -29,7 +39,10 @@ export default function LoginPage() {
         <label htmlFor="password">Password</label>
         <input type="password" name="password"/>
 
-        <LoginButton label="Login"/>
+        <LoginButton
+            label="Login"
+            type="submit"
+        />
 
         <p>Don&#39;t have an account? Register <Link href={"/register"}>here</Link>!</p>
       </form>
