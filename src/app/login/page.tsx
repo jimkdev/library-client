@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import LoginButton from "@/components/buttons/login-button";
 import StringUtils from "@/utils/string-utils";
 import { useRouter } from "next/navigation";
+import PrimaryButton from "@/components/buttons/primary-button";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -26,7 +26,7 @@ export default function LoginPage() {
       );
 
       if (response.status === 200) {
-        router.push("/admin");
+        router.push("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -34,19 +34,40 @@ export default function LoginPage() {
   }
 
   return (
-    <div>
-      <form action={login}>
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" />
+    <div className="flex justify-center items-center h-full">
+      <form
+        action={login}
+        className="flex flex-col justify-center border-cyan-700 border-2 rounded-xl p-10"
+      >
+        <h1 className="text-4xl mb-14 text-center">
+          Library administration panel
+        </h1>
+        <label htmlFor="username" className="mb-1 text-lg">
+          Username
+        </label>
+        <input
+          type="text"
+          name="username"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" />
+        <label htmlFor="password" className="mb-1 text-lg">
+          Password
+        </label>
+        <input
+          type="password"
+          name="password"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <LoginButton label="Login" type="submit" />
+        <PrimaryButton label="Login" type="submit" />
 
-        <p>
+        <p className="mt-4 text-center text-md">
           Don&#39;t have an account? Register{" "}
-          <Link href={"/register"}>here</Link>!
+          <Link className="text-blue-500" href={"/register"}>
+            here
+          </Link>
+          !
         </p>
       </form>
     </div>

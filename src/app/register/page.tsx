@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { JSX } from "react";
-import RegisterButton from "@/components/buttons/register-button";
 import StringUtils from "@/utils/string-utils";
 import { useRouter } from "next/navigation";
+import PrimaryButton from "@/components/buttons/primary-button";
 
 export default function RegistrationPage(): JSX.Element {
   const router = useRouter();
@@ -47,30 +47,76 @@ export default function RegistrationPage(): JSX.Element {
   }
 
   return (
-    <div>
-      <form action={handleSubmit}>
-        <label htmlFor="first-name">First name</label>
-        <input type="text" name="first-name" />
+    <div className="flex justify-center items-center h-full">
+      <form
+        action={handleSubmit}
+        className="flex flex-col justify-center border-cyan-700 border-2 rounded-xl p-10"
+      >
+        <h1 className="text-4xl mb-14 text-center">
+          Library administration panel
+        </h1>
+        <label htmlFor="first-name" className="mb-1 text-lg">
+          First name
+        </label>
+        <input
+          type="text"
+          name="first-name"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="last-name">Last name</label>
-        <input type="text" name="last-name" />
+        <label htmlFor="last-name" className="mb-1 text-lg">
+          Last name
+        </label>
+        <input
+          type="text"
+          name="last-name"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="mobile">Mobile phone</label>
-        <input type="text" name="mobile" />
+        <label htmlFor="mobile" className="mb-1 text-lg">
+          Mobile phone
+        </label>
+        <input
+          type="text"
+          name="mobile"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" />
+        <label htmlFor="username" className="mb-1 text-lg">
+          Username
+        </label>
+        <input
+          type="text"
+          name="username"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" />
+        <label htmlFor="email" className="mb-1 text-lg">
+          Email
+        </label>
+        <input
+          type="text"
+          name="email"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" />
+        <label htmlFor="password" className="mb-1 text-lg">
+          Password
+        </label>
+        <input
+          type="password"
+          name="password"
+          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
+        />
 
-        <RegisterButton label={"Register"} />
+        <PrimaryButton label="Register" type="submit" />
 
-        <p>
-          Already have an account? Login <Link href={"/login"}>here</Link>!
+        <p className="mt-4 text-center text-md">
+          Already have an account? Login{" "}
+          <Link href={"/login"} className="text-blue-500">
+            here
+          </Link>
+          !
         </p>
       </form>
     </div>
