@@ -9,7 +9,7 @@ export default function DashboardLayout({
   return (
     <>
       {/*<header></header>*/}
-      <main>
+      <main className="h-[100%] flex">
         <Aside />
         <div>{children}</div>
       </main>
