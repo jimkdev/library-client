@@ -6,7 +6,9 @@ body {
 }
 
 .background-image {
-    object-fit: cover;
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)), url("../../public/background.jpg") no-repeat;
-    background-size: cover;
+  object-fit: cover;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)),
+    url("../../public/background.jpg") no-repeat;
+  background-size: cover;
 }
