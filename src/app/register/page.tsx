@@ -47,10 +47,10 @@ export default function RegistrationPage(): JSX.Element {
   }
 
   return (
-    <div className="flex justify-center items-center h-full">
+    <div className="flex justify-center items-center h-full background-image">
       <form
         action={handleSubmit}
-        className="flex flex-col justify-center border-cyan-700 border-2 rounded-xl p-10"
+        className="flex flex-col justify-center border-cyan-700 border-2 rounded-xl p-10 bg-white"
       >
         <h1 className="text-4xl mb-14 text-center">
           Library administration panel

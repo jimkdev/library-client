@@ -4,3 +4,9 @@ html,
 body {
   height: 100% !important;
 }
+
+.background-image {
+    object-fit: cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)), url("../../public/background.jpg") no-repeat;
+    background-size: cover;
+}
