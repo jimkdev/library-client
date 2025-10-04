@@ -3,7 +3,7 @@ import { JSX } from "react";
 
 export default function Aside(): JSX.Element {
   return (
-    <div className="min-w-[10%] max-w-[10%] h-[100%] flex flex-col flex-wrap justify-center items-center bg-cyan-700 text-white">
+    <div className="min-w-[94px] max-w-[10%] h-[100%] flex flex-col flex-wrap justify-center items-center bg-cyan-700 text-white">
       <ul className="text-lg w-[100%]">
         <li className="w-[100%]">
           <Link

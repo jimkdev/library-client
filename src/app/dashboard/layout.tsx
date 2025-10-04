@@ -8,12 +8,12 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      {/*<header></header>*/}
-      <main className="h-[100%] flex">
+      <header className="h-[5%] bg-cyan-700"></header>
+      <main className="h-[85%] flex">
         <Aside />
-        <div>{children}</div>
+        <div className="pt-10 pl-10">{children}</div>
       </main>
-      {/*<footer></footer>*/}
+      <footer className="h-[10%] bg-cyan-700"></footer>
     </>
   );
 }

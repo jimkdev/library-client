@@ -1,3 +1,7 @@
 export default function DashboardUsersPage() {
-  return <>This is a test</>;
+  return (
+    <>
+      <h1 className="text-4xl mb-14">Users</h1>
+    </>
+  );
 }
