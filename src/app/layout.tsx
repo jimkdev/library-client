@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./global.css";
+import { AppProvider } from "@/contexts/application.context";
 
 export const metadata: Metadata = {
   title: "Library Client",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <AppProvider>
+        <body>{children}</body>
+      </AppProvider>
     </html>
   );
 }
