@@ -3,9 +3,11 @@ import Link from "next/link";
 import StringUtils from "@/utils/string-utils";
 import { useRouter } from "next/navigation";
 import PrimaryButton from "@/components/buttons/primary-button";
+import { useApplicationContext } from "@/contexts/application.context";
 
 export default function LoginPage() {
   const router = useRouter();
+  const applicationContext = useApplicationContext();
 
   async function login(formData: FormData) {
     const stringUtils = new StringUtils();
@@ -26,6 +28,12 @@ export default function LoginPage() {
       );
 
       if (response.status === 200) {
+        const { data } = await response.json();
+        const context = {
+          token: data.accessToken,
+        };
+        applicationContext.setContext(context);
+        localStorage.setItem("token", context.token);
         router.push("/dashboard");
       }
     } catch (error) {
@@ -34,40 +42,19 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex justify-center items-center h-full background-image">
-      <form
-        action={login}
-        className="flex flex-col justify-center border-cyan-700 border-2 rounded-xl p-10 bg-white"
-      >
-        <h1 className="text-4xl mb-14 text-center">
-          Library administration panel
-        </h1>
-        <label htmlFor="username" className="mb-1 text-lg">
-          Username
-        </label>
-        <input
-          type="text"
-          name="username"
-          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
-        />
+    <div>
+      <form action={login}>
+        <label htmlFor="username">Username</label>
+        <input type="text" name="username" placeholder="Username" />
 
-        <label htmlFor="password" className="mb-1 text-lg">
-          Password
-        </label>
-        <input
-          type="password"
-          name="password"
-          className="border-2 border-cyan-700 rounded-md mb-4 p-2"
-        />
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" placeholder="Password" />
 
         <PrimaryButton label="Login" type="submit" />
 
-        <p className="mt-4 text-center text-md">
-          Don&#39;t have an account? Register{" "}
-          <Link className="text-blue-500" href={"/register"}>
-            here
-          </Link>
-          !
+        <p>
+          Don&#39;t have an account? Create a new one{" "}
+          <Link href={"/register"}>here</Link>!
         </p>
       </form>
     </div>
