@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+:root {
+  --bg-color: rgba(223, 186, 165, 1);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+.background-container {
+  width: 50%;
+}
+
+.background-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: inherit;
+  background-color: var(--bg-color);
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.hero .logo-container {
+  width: 98px;
+  height: 86px;
+  rotate: -6.65deg;
+}

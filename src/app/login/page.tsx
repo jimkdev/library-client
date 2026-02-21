@@ -42,21 +42,38 @@ export default function LoginPage() {
   }
 
   return (
-    <div>
-      <form action={login}>
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" placeholder="Username" />
+    <main>
+      <section className="background-container">
+        <img src="/background.png" alt="background image" />
+      </section>
 
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" placeholder="Password" />
+      <section className="login-section">
+        <div className="hero">
+          <h1>
+            Pages
+            <div className="logo-container">
+              <img src="/logo.png" alt="logo" />
+            </div>
+            Tales
+          </h1>
+        </div>
+        <div className="login-form-container">
+          <form action={login}>
+            <label htmlFor="username">Username</label>
+            <input type="text" name="username" placeholder="Username" />
 
-        <PrimaryButton label="Login" type="submit" />
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" placeholder="Password" />
 
-        <p>
-          Don&#39;t have an account? Create a new one{" "}
-          <Link href={"/register"}>here</Link>!
-        </p>
-      </form>
-    </div>
+            <PrimaryButton label="Login" type="submit" />
+
+            <p>
+              Don&#39;t have an account?
+              <Link href={"/register"}>&#32;Sign up</Link>!
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 }
