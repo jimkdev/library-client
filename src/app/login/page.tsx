@@ -49,13 +49,10 @@ export default function LoginPage() {
 
       <section className="login-section">
         <div className="hero">
-          <h1>
-            Pages
-            <div className="logo-container">
-              <img src="/logo.png" alt="logo" />
-            </div>
-            Tales
-          </h1>
+          <div className="logo-container">
+            <img src="/logo.png" alt="logo" />
+          </div>
+          <h1 className="dancing-script-font">Papyrus</h1>
         </div>
         <div className="login-form-container">
           <form action={login}>
