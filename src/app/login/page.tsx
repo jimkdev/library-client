@@ -55,18 +55,39 @@ export default function LoginPage() {
           <h1 className="dancing-script-font">Papyrus</h1>
         </div>
         <div className="login-form-container">
-          <form action={login}>
-            <label htmlFor="username">Username</label>
-            <input type="text" name="username" placeholder="Username" />
+          <h2 className="lato-black">Sign in</h2>
+          <p className="lato-regular">Welcome back! Sign in to continue.</p>
+          <form action={login} className="mt-[50px]">
+            <label className="lato-medium" htmlFor="username">Username</label>
+            <input
+              className="mt-[10px] lato-light-italic"
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Your username" />
 
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" placeholder="Password" />
+            <label className="lato-medium mt-[40px]" htmlFor="password">Password</label>
+            <input
+              className="mt-[10px] lato-light-italic"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Your password" />
 
-            <PrimaryButton label="Login" type="submit" />
+            <Link
+              className="text-right underline mt-[10px] lato-medium"
+              id="forgot-password-link"
+              href="/forgot-password"
+            >Forgot password?</Link>
 
-            <p>
+            <PrimaryButton
+              styleClasses={["mt-[47px]", "login-button", "lato-medium"]}
+              label="Sign in"
+              type="submit" />
+
+            <p className="lato-regular text-center mt-[10px]">
               Don&#39;t have an account?
-              <Link href={"/register"}>&#32;Sign up</Link>!
+              <Link className="underline" id="sign-up-link" href="/register">&#32;Sign up</Link>
             </p>
           </form>
         </div>
