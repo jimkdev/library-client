@@ -54,7 +54,7 @@ export default function LoginPage() {
           </div>
           <h1 className="dancing-script-font">Papyrus</h1>
         </div>
-        <div className="login-form-container mt-[105px]">
+        <div className="login-form-container mt-[105px] mb-[200px]">
           <img alt="spiral" className="spiral-img" src="/spiral.svg" />
           <h2 className="lato-black">Sign in</h2>
           <p className="lato-regular">Welcome back! Sign in to continue.</p>
