@@ -94,6 +94,15 @@ main {
   object-fit: cover;
 }
 
+.spiral-img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: -0.5%;
+  left: -5%;
+  z-index: 1 !important;
+}
+
 .login-section {
   width: 50%;
   overflow: auto;
